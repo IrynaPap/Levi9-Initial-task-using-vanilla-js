@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<title>github users</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="index.js"></script>
+<script src="load_info.js"></script>
+
+<style>
+    body {
+        min-width: 200px;
+    }
+    
+    li {
+        list-style-type: none;
+    }
+    
+    li span {
+        font-size: 28px;
+        color: #4078c0;
+        margin: 20px;
+    }
+    
+    #infoCard {
+        width: 815px;
+        background-color: white;
+        text-align: center;
+        font-size: 16px;
+        color: #767676;
+    }
+    
+    #commonDiv {
+        width: 800px;
+        margin: auto;
+        margin-top: 50px;
+    }
+    
+    #myDropdown {
+        display: none;
+    }
+    
+    .row-style {
+        border: 1px solid #ebfaf2;
+        border-collapse: collapse;
+        padding: 3px;
+        margin-left: 0;
+        background-color: #d8f5f4;
+    }
+    
+    .headBlock {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+        color: #767676;
+        ;
+    }
+    
+    .row-style:hover {
+        background-color: #afebe8;
+    }
+    
+    .headBlockAvatar {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 70px;
+        width: 17%;
+    }
+    
+    .lists {
+        display: inline-block;
+    }
+    
+    .displayTop {
+        display: inline-block;
+        margin: 20px;
+    }
+    
+    .loader {
+        background-image: url(loader.gif);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 50%;
+        width: 815px;
+        height: 0px;
+        transition: height 1s;
+    }
+    
+    .loader.showed {
+        height: 192px;
+    }
+    
+    @media (max-width: 1000px) {
+        #commonDiv {
+            width: 100%;
+            margin-top: 0;
+        }
+        .headBlockAvatar {
+            float: left;
+        }
+        .headBlock {
+            float: left;
+        }
+        #infoCard {
+            width: 100%;
+        }
+        .loader {
+            width: 100%;
+        }
+    }
+</style>
+
+<head>
+
+    <body>
+
+        <div id="commonDiv">
+            <div class="row row-style">
+                <div class="col-md-4 col-sm-4 headBlock headBlockAvatar">Avatar</div>
+                <div class="col-md-4 col-sm-4 headBlock">Login</div>
+                <div class="col-md-4 col-sm-4 headBlock">Admin status</div>
+            </div>
+        </div>
+    </body>
+</head>
+
+</html>
