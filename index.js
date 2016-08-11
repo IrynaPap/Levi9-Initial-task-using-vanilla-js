@@ -41,7 +41,7 @@ function createRow(wrapper, user) {
 }
 
 function createDroplist(wrapper, row, loadUser) {
-    if (!document.getElementById("infoCard")) {
+    if (!document.getElementById("infoCard") && !document.getElementsByClassName("loader").length) {
         showLoader(wrapper, row, function (loader) {
             loadUser(setInfo);
 
@@ -145,11 +145,11 @@ function userView(User) {
     email.innerHTML = User.email;
 
 
-    followers.innerHTML = "Followers" + "<span> <a href='https://github.com/"+User.login+"/followers'>"+ User.followers+"</a></span>";
-    followings.innerHTML = "Followings" + "<span><a href='https://github.com/"+User.login+"/following'>" + User.followings + "</a></span>";
-    repos.innerHTML = "Repos" + "<span><a href='https://github.com/"+User.login+"?tab=repositories'>" + User.repos + "</a></span>";
+    followers.innerHTML = "Followers" + "<span> <a href='https://github.com/" + User.login + "/followers'>" + User.followers + "</a></span>";
+    followings.innerHTML = "Followings" + "<span><a href='https://github.com/" + User.login + "/following'>" + User.followings + "</a></span>";
+    repos.innerHTML = "Repos" + "<span><a href='https://github.com/" + User.login + "?tab=repositories'>" + User.repos + "</a></span>";
 
-    starred.innerHTML = "Starred" + "<span><a href='https://github.com/stars/"+User.login+"'>" + User.starred + "</a></span>";
+    starred.innerHTML = "Starred" + "<span><a href='https://github.com/stars/" + User.login + "'>" + User.starred + "</a></span>";
     subscriptions.innerHTML = "Subscriptions" + "<span>" + User.subscriptions + "</a></span>";
     organizations.innerHTML = "Organizations" + "<span>" + User.organizations + "</a></span>";
 
@@ -163,7 +163,7 @@ function showLoader(wrapper, row, finnishedCallback) {
     wrapper.insertBefore(loader, row.nextSibling);
     setTimeout(function () {
         loader.className += " showed";
-        setTimeout(function() {
+        setTimeout(function () {
             finnishedCallback(loader);
         }, 1000);
     }, 1);
